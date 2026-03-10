@@ -1,0 +1,59 @@
+
+== ROOT ==
+./environment.yml
+./ft_schedules
+./.git
+./imgs
+./LICENSE
+./pyproject.toml
+./README.md
+./repo_inventory.txt
+./rinalmo
+./train_expression_level.py
+./train_ncrna_classification.py
+./train_ribosome_loading.py
+./train_sec_struct_prediction.py
+./train_splice_site_prediction.py
+./train_translation_efficiency.py
+
+== RINALMO ==
+rinalmo
+rinalmo/config.py
+rinalmo/data
+rinalmo/data/alphabet.py
+rinalmo/data/constants.py
+rinalmo/data/downstream
+rinalmo/model
+rinalmo/model/attention.py
+rinalmo/model/downstream.py
+rinalmo/model/model.py
+rinalmo/model/modules.py
+rinalmo/model/rope.py
+rinalmo/pretrained.py
+rinalmo/resources
+rinalmo/resources/model2gdisk.json
+rinalmo/resources/remote_data.json
+rinalmo/utils
+rinalmo/utils/download.py
+rinalmo/utils/finetune_callback_nc.py
+rinalmo/utils/finetune_callback.py
+rinalmo/utils/ncrna_classification
+rinalmo/utils/prepare_mrna_te_and_el_data.py
+rinalmo/utils/prepare_ncrna_classification_data.py
+rinalmo/utils/scaler.py
+rinalmo/utils/sec_struct.py
+rinalmo/utils/splice_site_metrics.py
+
+== TRAIN SCRIPTS ==
+./train_expression_level.py
+./train_ncrna_classification.py
+./train_ribosome_loading.py
+./train_sec_struct_prediction.py
+./train_splice_site_prediction.py
+./train_translation_efficiency.py
+
+== TEST DIRS ==
+
+== CONFIG DIRS ==
+
+== DOCS DIRS ==
