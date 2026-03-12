@@ -1,0 +1,4 @@
+{"sequence_id":"seq_001","sequence":"ACTGACTGACTGACTG","source":"fixture","length":16}
+{"sequence_id":"seq_002","sequence":"ACTGACTGACTGACTG","source":"fixture","length":16}
+{"sequence_id":"seq_003","sequence":"ACTGACTGACTGACCG","source":"fixture","length":16}
+{"sequence_id":"seq_004","sequence":"TTTTCCCCAAAAGGGG","source":"fixture","length":16}

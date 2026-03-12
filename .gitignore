@@ -15,3 +15,14 @@ pyproject.toml.bak.subphase3
 
 # local raw source registry
 data/raw/manifest.json
+
+# clustering work artifacts
+data/work/clustering/
+data/work/clusters.jsonl
+
+# smoke-test generated artifacts
+tests/fixtures/pretrain/clustering/*.fa
+tests/fixtures/pretrain/clustering/rmdup/
+tests/fixtures/pretrain/clustering/mmseqs/
+tests/fixtures/pretrain/clustering/clusters.jsonl
+tests/fixtures/pretrain/clustering/cluster_stats.json
