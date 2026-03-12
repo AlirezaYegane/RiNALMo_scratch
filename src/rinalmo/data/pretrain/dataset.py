@@ -26,13 +26,24 @@ class JsonlPretrainDataset:
             if not shard.is_absolute():
                 shard = base_dir / shard
 
+            if not shard.exists():
+                raise FileNotFoundError(f"manifest shard not found: {shard}")
+
+            shard_count = 0
+
             with shard.open("r", encoding="utf-8") as f:
                 for line_no, line in enumerate(f, start=1):
                     line = line.strip()
                     if not line:
                         continue
 
-                    obj = json.loads(line)
+                    try:
+                        obj = json.loads(line)
+                    except json.JSONDecodeError as exc:
+                        raise ValueError(
+                            f"invalid json in {shard}:{line_no}: {exc.msg}"
+                        ) from exc
+
                     record = normalize_record(obj)
 
                     if record.sequence_id in seen_ids:
@@ -41,4 +52,10 @@ class JsonlPretrainDataset:
                         )
 
                     seen_ids.add(record.sequence_id)
+                    shard_count += 1
                     yield record
+
+            if shard_count != entry.num_records:
+                raise ValueError(
+                    f"record count mismatch for {shard}: manifest={entry.num_records}, actual={shard_count}"
+                )

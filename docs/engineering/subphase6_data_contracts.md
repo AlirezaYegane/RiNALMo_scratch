@@ -9,9 +9,12 @@ It does not run full paper-faithful preprocessing and does not require the 1TB-s
 - per-record schema normalization and validation
 - alphabet and length checks
 - duplicate sequence_id detection
+- missing-shard detection
+- invalid-JSON / corrupted-shard detection
+- manifest record-count validation
 - dry-run dataset iterator
 - minimal collator contract
-- unit tests for validation, manifest loading, dataset iteration, and collator behavior
+- unit tests for validation, manifest loading, dataset iteration, collator behavior, and shard integrity
 
 ## Required sample fields
 - sequence
