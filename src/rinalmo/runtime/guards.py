@@ -4,10 +4,7 @@ import math
 import shutil
 from pathlib import Path
 
-try:
-    from lightning.pytorch.callbacks import Callback
-except ImportError:  # compatibility
-    from pytorch_lightning.callbacks import Callback
+from lightning.pytorch.callbacks import Callback
 
 
 class NaNLossGuard(Callback):
@@ -30,11 +27,18 @@ class NaNLossGuard(Callback):
             return
 
         if math.isnan(value) or math.isinf(value):
-            raise RuntimeError(f"NaN/Inf loss detected at global_step={trainer.global_step}: {value}")
+            raise RuntimeError(
+                f"NaN/Inf loss detected at global_step={trainer.global_step}: {value}"
+            )
 
 
 class DiskSpaceGuard(Callback):
-    def __init__(self, path: str, min_free_gb: float = 20.0, check_every_n_steps: int = 50):
+    def __init__(
+        self,
+        path: str,
+        min_free_gb: float = 20.0,
+        check_every_n_steps: int = 50,
+    ):
         super().__init__()
         self.path = str(path)
         self.min_free_gb = float(min_free_gb)

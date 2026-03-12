@@ -3,16 +3,10 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
+import lightning.pytorch as pl
+from lightning.pytorch.callbacks import LearningRateMonitor, ModelCheckpoint
+from lightning.pytorch.loggers import CSVLogger, WandbLogger
 from omegaconf import OmegaConf
-
-try:
-    import lightning.pytorch as pl
-    from lightning.pytorch.callbacks import LearningRateMonitor, ModelCheckpoint
-    from lightning.pytorch.loggers import CSVLogger, WandbLogger
-except ImportError:  # compatibility
-    import pytorch_lightning as pl
-    from pytorch_lightning.callbacks import LearningRateMonitor, ModelCheckpoint
-    from pytorch_lightning.loggers import CSVLogger, WandbLogger
 
 from rinalmo.runtime.checkpointing import (
     checkpoint_dir,
