@@ -12,3 +12,6 @@ outputs/splice/
 
 # local backups
 pyproject.toml.bak.subphase3
+
+# local raw source registry
+data/raw/manifest.json

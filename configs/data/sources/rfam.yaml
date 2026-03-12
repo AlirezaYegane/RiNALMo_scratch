@@ -1,0 +1,8 @@
+source_name: rfam
+enabled: true
+kind: fasta_gz
+paper_used: true
+url: "https://ftp.ebi.ac.uk/pub/databases/Rfam/CURRENT/fasta-files/Rfam.fa.gz"
+local_path: ""
+checksum_sha256: ""
+notes: "Rfam fasta source referenced by the paper."

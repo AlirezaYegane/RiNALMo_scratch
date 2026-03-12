@@ -1,0 +1,8 @@
+source_name: nt
+enabled: true
+kind: fasta_gz
+paper_used: true
+url: "https://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/"
+local_path: ""
+checksum_sha256: ""
+notes: "Large NCBI nt source referenced by the paper."

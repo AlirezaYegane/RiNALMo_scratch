@@ -1,0 +1,8 @@
+source_name: ensembl
+enabled: true
+kind: fasta_gz
+paper_used: true
+url: "https://ftp.ensembl.org/pub/release-109/fasta/"
+local_path: ""
+checksum_sha256: ""
+notes: "Ensembl release-109 fasta source referenced by the paper."

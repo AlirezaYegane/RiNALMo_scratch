@@ -1,0 +1,8 @@
+source_name: rnacentral
+enabled: true
+kind: fasta_gz
+paper_used: true
+url: "https://ftp.ebi.ac.uk/pub/databases/RNAcentral/current_release/sequences/"
+local_path: ""
+checksum_sha256: ""
+notes: "Primary ncRNA source used in the paper."
