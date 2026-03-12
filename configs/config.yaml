@@ -3,6 +3,8 @@ defaults:
   - model: giga
   - runtime: local
   - experiment: splice_prepare_only
+  - callbacks: default
+  - logging: default
   - _self_
 
 dry_run: true
