@@ -3,7 +3,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -26,7 +26,7 @@ def load_manifest(path: Path) -> dict[str, Any]:
 
 
 def save_manifest(path: Path, manifest: dict[str, Any]) -> None:
-    manifest["generated_at"] = datetime.now(timezone.utc).isoformat()
+    manifest["generated_at"] = datetime.now(UTC).isoformat()
     path.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n")
 
 
@@ -53,9 +53,15 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    path = Path(args.path).expanduser().resolve()
+    raw_path = str(args.path).strip()
+    if not raw_path:
+        raise ValueError("--path cannot be empty")
+
+    path = Path(raw_path).expanduser().resolve()
     if not path.exists():
         raise FileNotFoundError(f"raw source file not found: {path}")
+    if path.is_dir():
+        raise IsADirectoryError(f"--path must point to a file, not a directory: {path}")
 
     stat = path.stat()
     record = {
@@ -64,7 +70,7 @@ def main() -> None:
         "local_path": str(path),
         "url": args.url,
         "size_bytes": stat.st_size,
-        "modified_at": datetime.fromtimestamp(stat.st_mtime, tz=timezone.utc).isoformat(),
+        "modified_at": datetime.fromtimestamp(stat.st_mtime, tz=UTC).isoformat(),
         "checksum_sha256": sha256sum(path) if args.checksum else "",
         "status": "registered",
     }
