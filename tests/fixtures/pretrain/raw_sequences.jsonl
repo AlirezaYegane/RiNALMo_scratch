@@ -1,0 +1,5 @@
+{"sequence_id":"ok_u_lower","source":"fixture","sequence":"augc augc\naugc\taugc"}
+{"sequence_id":"empty_ws","source":"fixture","sequence":"   \n\t"}
+{"sequence_id":"invalid_chars","source":"fixture","sequence":"ACGTXZ"}
+{"sequence_id":"short_valid","source":"fixture","sequence":"AUGC"}
+{"sequence_id":"ok_ambiguous","source":"fixture","sequence":"nnnnnnnnnnnnnnnn"}
