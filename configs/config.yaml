@@ -1,0 +1,14 @@
+defaults:
+  - task: splice
+  - model: giga
+  - runtime: local
+  - experiment: splice_prepare_only
+  - _self_
+
+dry_run: true
+
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: .

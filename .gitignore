@@ -1,0 +1,14 @@
+
+# hydra / local runtime artifacts
+.hydra/
+**/__pycache__/
+*.pyc
+splice_hydra.log
+
+# local downstream data / outputs
+splicesite_data/
+splicesite_test/
+outputs/splice/
+
+# local backups
+pyproject.toml.bak.subphase3

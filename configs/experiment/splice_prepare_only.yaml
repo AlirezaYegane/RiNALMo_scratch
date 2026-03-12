@@ -1,0 +1,7 @@
+# @package _global_
+
+task:
+  options:
+    output_dir: ./outputs/splice/prepare_only_hydra
+  flags:
+    prepare_data: true

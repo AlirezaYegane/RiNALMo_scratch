@@ -1,0 +1,37 @@
+# @package _global_
+
+name: splice
+
+legacy:
+  entrypoint: scripts.train.train_splice_site_prediction:main
+  positional_order: []
+  option_order:
+    - task.options.data_dir
+    - task.options.test_data_dir
+    - task.options.output_dir
+    - task.options.max_steps
+    - task.options.max_epochs
+    - runtime.accelerator
+    - runtime.devices
+    - task.options.ss_type
+    - task.options.benchmark
+    - task.options.dataset_id
+    - model.init_params
+  flag_order:
+    - task.flags.prepare_data
+    - task.flags.test_only
+
+task:
+  options:
+    data_dir: ./splicesite_data
+    test_data_dir: ./splicesite_test
+    output_dir: ./outputs/splice/hydra
+    max_steps: 0
+    max_epochs: 1
+    ss_type: donor
+    benchmark: Danio
+    dataset_id: db_1
+
+  flags:
+    prepare_data: false
+    test_only: false
