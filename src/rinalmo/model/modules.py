@@ -2,9 +2,8 @@ import torch
 from torch import nn
 from torch.nn import functional as F
 
-from rinalmo.model.attention import MultiHeadSelfAttention, FlashMultiHeadSelfAttention
+from rinalmo.model.attention import FlashMultiHeadSelfAttention, MultiHeadSelfAttention
 
-import torch.utils.checkpoint as checkpoint
 
 class TokenDropout(nn.Module):
     def __init__(
@@ -55,13 +54,11 @@ class Transformer(nn.Module):
             attn_weights = []
 
         for block in self.blocks:
-            x, attn = checkpoint.checkpoint(
-                block, 
+            x, attn = block(
                 x,
                 key_padding_mask=key_padding_mask,
                 need_attn_weights=need_attn_weights,
-                use_reentrant=False
-                )
+            )
 
             if need_attn_weights:
                 attn_weights.append(attn)

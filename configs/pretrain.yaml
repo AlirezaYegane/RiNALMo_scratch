@@ -1,0 +1,14 @@
+defaults:
+  - model: smoke_tiny
+  - data: pretrain_fixture
+  - train@_global_: pretrain_smoke
+  - _self_
+
+experiment:
+  name: smoke
+
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: .

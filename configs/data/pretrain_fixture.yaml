@@ -1,0 +1,9 @@
+name: pretrain_fixture
+manifest_path: tests/fixtures/pretrain/manifest.jsonl
+use_lmdb: false
+max_tokens: 1024
+batch_size: 2
+num_workers: 0
+pin_memory: false
+persistent_workers: false
+drop_last: false
