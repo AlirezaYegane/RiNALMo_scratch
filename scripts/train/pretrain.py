@@ -180,13 +180,15 @@ class PretrainWrapper(pl.LightningModule):
 
 
 def build_train_loader(cfg: DictConfig, alphabet: Alphabet) -> tuple[DataLoader, dict[str, Any]]:
-    if bool(cfg.data.use_lmdb):
-        raise NotImplementedError(
-            "LMDB pretrain dataset is not wired in subphase 2.6 smoke; set data.use_lmdb=false."
-        )
-
     manifest_path = Path(to_absolute_path(str(cfg.data.manifest_path)))
-    dataset = JsonlPretrainDataset(manifest_path)
+
+    if bool(cfg.data.use_lmdb):
+        from rinalmo.data.pretrain.dataset import LmdbPretrainDataset
+
+        dataset = LmdbPretrainDataset(manifest_path)
+    else:
+        dataset = JsonlPretrainDataset(manifest_path)
+
     records = list(dataset.iter_records())
 
     if not records:

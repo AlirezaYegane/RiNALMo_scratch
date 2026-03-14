@@ -1,0 +1,8 @@
+# @package _global_
+defaults:
+  - /model: smoke_tiny
+  - /data: pretrain_fixture
+  - /train@_global_: pretrain_tiny
+
+experiment:
+  name: pretrain_tiny

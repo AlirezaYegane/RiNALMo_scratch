@@ -1,14 +1,14 @@
 seed: 42
 
 run:
-  name: pretrain_smoke
+  name: pretrain_dryrun
 
 paths:
-  output_dir: outputs/pretrain_smoke
+  output_dir: outputs/pretrain_dryrun
 
 trainer:
   max_epochs: 1
-  max_steps: 20
+  max_steps: 500
   accelerator: ${runtime.accelerator}
   devices: ${runtime.devices}
   precision: ${runtime.precision}
@@ -26,7 +26,7 @@ callbacks:
     every_n_epochs: 1
     save_last: true
   disk_guard:
-    min_free_gb: 5.0
+    min_free_gb: 20.0
     check_every_n_steps: 50
 
 logging:
@@ -36,5 +36,5 @@ logging:
 optimization:
   lr: 5.0e-5
   min_lr: 1.0e-5
-  warmup_steps: 10
+  warmup_steps: 50
   weight_decay: 0.01

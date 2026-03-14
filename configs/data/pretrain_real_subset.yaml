@@ -1,0 +1,9 @@
+name: pretrain_real_subset
+manifest_path: ${oc.env:RINALMO_PRETRAIN_MANIFEST,PLEASE_SET_RINALMO_PRETRAIN_MANIFEST}
+use_lmdb: false
+max_tokens: 1024
+batch_size: 2
+num_workers: 2
+pin_memory: true
+persistent_workers: true
+drop_last: false

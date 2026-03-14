@@ -1,19 +1,19 @@
 seed: 42
 
 run:
-  name: pretrain_smoke
+  name: pretrain_subset
 
 paths:
-  output_dir: outputs/pretrain_smoke
+  output_dir: outputs/pretrain_subset
 
 trainer:
   max_epochs: 1
-  max_steps: 20
+  max_steps: 50
   accelerator: ${runtime.accelerator}
   devices: ${runtime.devices}
   precision: ${runtime.precision}
   gradient_clip_val: 1.0
-  log_every_n_steps: 1
+  log_every_n_steps: 5
   accumulate_grad_batches: 1
   resume: null
   num_sanity_val_steps: ${runtime.num_sanity_val_steps}

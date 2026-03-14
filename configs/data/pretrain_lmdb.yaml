@@ -1,0 +1,9 @@
+name: pretrain_lmdb
+manifest_path: ${oc.env:RINALMO_PRETRAIN_MANIFEST,PLEASE_SET_RINALMO_PRETRAIN_MANIFEST}
+use_lmdb: true
+max_tokens: 2048
+batch_size: 1
+num_workers: 4
+pin_memory: true
+persistent_workers: true
+drop_last: true

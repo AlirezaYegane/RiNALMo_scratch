@@ -1,2 +1,5 @@
-accelerator: gpu
+name: local
+accelerator: cpu
 devices: 1
+precision: 32-true
+num_sanity_val_steps: 0

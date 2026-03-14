@@ -1,0 +1,8 @@
+# @package _global_
+defaults:
+  - /model: pretrain_giga
+  - /data: pretrain_lmdb
+  - /train@_global_: pretrain_dryrun
+
+experiment:
+  name: pretrain_dryrun
