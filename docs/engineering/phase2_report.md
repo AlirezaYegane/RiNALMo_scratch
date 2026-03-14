@@ -51,6 +51,7 @@ It is not yet a full paper-scale launch because full raw-source registration on 
 - Full raw-source registration into data/raw/manifest.json is not complete on the current host.
 - Current successful GPU dryrun should be treated as functional validation, not full-corpus validation.
 - Final paper-scale Phase 3 launch should only begin after raw source availability is confirmed and a longer dryrun is completed on the intended H200 path.
+- The 1TB-scale dataset bundle is intentionally not downloaded on this host due to storage/policy constraints.
 
 ## Go / No-Go
 - GO: controlled H200 candidate launch on the currently validated subset-backed pipeline
