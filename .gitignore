@@ -26,3 +26,18 @@ tests/fixtures/pretrain/clustering/rmdup/
 tests/fixtures/pretrain/clustering/mmseqs/
 tests/fixtures/pretrain/clustering/clusters.jsonl
 tests/fixtures/pretrain/clustering/cluster_stats.json
+outputs/
+lightning_logs/
+wandb/
+tmp/
+scratch/
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Local logs
+*.log
+
+# Local runtime / generated data
+data/
